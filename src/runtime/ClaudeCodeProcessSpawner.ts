@@ -26,7 +26,7 @@ export interface SpawnerOptions {
  */
 export class ClaudeCodeProcessSpawner extends EventEmitter {
   private agent: AgentConfig;
-  private logger: (level: string, message: string, meta?: any) => void;
+  private logger: (level: 'debug' | 'info' | 'warn' | 'error', message: string, meta?: any) => void;
   private activeSessions: Map<string, { pty: IPty; session: ClaudeCodeSession }>;
 
   constructor(options: SpawnerOptions) {

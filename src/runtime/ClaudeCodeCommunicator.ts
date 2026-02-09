@@ -140,7 +140,7 @@ export class JsonOutputParser implements OutputParser {
 export class ClaudeCodeCommunicator extends EventEmitter {
   private spawner: ClaudeCodeProcessSpawner;
   private parser: OutputParser;
-  private logger: (level: string, message: string, meta?: any) => void;
+  private logger: (level: 'debug' | 'info' | 'warn' | 'error', message: string, meta?: any) => void;
   private outputHandlers: Map<string, (output: ParsedOutput) => void>;
 
   constructor(options: CommunicatorOptions) {

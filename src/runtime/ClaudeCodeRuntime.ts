@@ -22,7 +22,7 @@ export class ClaudeCodeRuntime extends EventEmitter {
   private agent: AgentConfig;
   private spawner: ClaudeCodeProcessSpawner;
   private communicator: ClaudeCodeCommunicator;
-  private logger: (level: string, message: string, meta?: any) => void;
+  private logger: (level: 'debug' | 'info' | 'warn' | 'error', message: string, meta?: any) => void;
   private isInitialized: boolean = false;
 
   constructor(options: ClaudeCodeRuntimeOptions) {
