@@ -10,7 +10,6 @@ import {
   ClaudeCodeSpawnOptions,
   ClaudeCodeEvent,
   ClaudeCodeSession,
-  ClaudeCodePermissionMode,
 } from '../types/runtime';
 
 export interface SpawnerOptions {
@@ -168,7 +167,7 @@ export class ClaudeCodeProcessSpawner extends EventEmitter {
 
     this.logger('info', 'Restarting Claude Code session', { sessionId });
 
-    const { task, workdir } = sessionData.session;
+    const { task } = sessionData.session;
     await this.stop(sessionId, true);
 
     // Respawn with same task

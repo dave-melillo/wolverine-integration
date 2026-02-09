@@ -220,8 +220,8 @@ export class ClaudeCodeRuntime extends EventEmitter {
     const binaryPath = claudeConfig.binaryPath || '/opt/homebrew/bin/claude';
 
     try {
-      const { execSync } = require('child_process');
-      const output = execSync(`${binaryPath} --version`, {
+      const childProcess = await import('child_process');
+      const output = childProcess.execSync(`${binaryPath} --version`, {
         encoding: 'utf-8',
         timeout: 5000,
       });
